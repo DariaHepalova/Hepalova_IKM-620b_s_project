@@ -46,7 +46,7 @@ namespace Hepalova_IKM_620b_s_project
             tClock.Start();
             if ((e.KeyChar >= '0') & (e.KeyChar <= '9') | (e.KeyChar == (char)8))
             {
-                return;
+                 return;
             }
             else
             {
