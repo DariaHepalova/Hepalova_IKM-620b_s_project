@@ -166,21 +166,20 @@
             // 
             пускToolStripMenuItem.Name = "пускToolStripMenuItem";
             пускToolStripMenuItem.ShortcutKeys = Keys.F9;
-            пускToolStripMenuItem.Size = new Size(180, 22);
+            пускToolStripMenuItem.Size = new Size(174, 22);
             пускToolStripMenuItem.Text = "Пуск";
             пускToolStripMenuItem.Click += bStart_Click;
             // 
             // toolStripSeparator4
             // 
             toolStripSeparator4.Name = "toolStripSeparator4";
-            toolStripSeparator4.Size = new Size(177, 6);
+            toolStripSeparator4.Size = new Size(171, 6);
             // 
             // праНакопичувачіToolStripMenuItem
             // 
             праНакопичувачіToolStripMenuItem.Name = "праНакопичувачіToolStripMenuItem";
-            праНакопичувачіToolStripMenuItem.Size = new Size(180, 22);
+            праНакопичувачіToolStripMenuItem.Size = new Size(174, 22);
             праНакопичувачіToolStripMenuItem.Text = "Пра накопичувачі";
-            праНакопичувачіToolStripMenuItem.Click += праНакопичувачіToolStripMenuItem_Click;
             // 
             // довідкаToolStripMenuItem
             // 

@@ -22,6 +22,7 @@ namespace Hepalova_IKM_620b_s_project
         {
             MajorObject = new MajorWork();
             MajorObject.SetTime();
+            MajorObject.Modify = false;// заборона запису
             About A = new About(); // створення форми About
             A.tAbout.Start();
             A.ShowDialog();
@@ -93,7 +94,8 @@ namespace Hepalova_IKM_620b_s_project
         {
             if (sfdSave.ShowDialog() == DialogResult.OK)// Виклик діалогового вікна збереженняфайлу
             {
-                MessageBox.Show(sfdSave.FileName);
+                MajorObject.WriteSaveFileName(sfdSave.FileName); // написання імені файлу
+                MajorObject.SaveToFile(); // метод збереження в файл }
             }
         }
 
