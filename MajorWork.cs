@@ -167,6 +167,7 @@ namespace Hepalova_IKM_620b_s_project
         {
             this.Data = ""; // "" - ознака порожнього рядка
             this.Result = null; // для string- null
+            this.Key = default;
         }
         public void Find(string Num) // пошук
         {
