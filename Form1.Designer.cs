@@ -51,12 +51,16 @@
             проПрограмуToolStripMenuItem = new ToolStripMenuItem();
             sfdSave = new SaveFileDialog();
             ofdOpen = new OpenFileDialog();
+            dgwOpen = new DataGridView();
+            bSearch = new Button();
+            tbSearch = new TextBox();
             menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgwOpen).BeginInit();
             SuspendLayout();
             // 
             // bStart
             // 
-            bStart.Location = new Point(305, 221);
+            bStart.Location = new Point(136, 220);
             bStart.Name = "bStart";
             bStart.Size = new Size(75, 23);
             bStart.TabIndex = 0;
@@ -67,7 +71,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(305, 104);
+            label1.Location = new Point(136, 103);
             label1.Name = "label1";
             label1.Size = new Size(38, 15);
             label1.TabIndex = 1;
@@ -76,7 +80,7 @@
             // tbInput
             // 
             tbInput.Enabled = false;
-            tbInput.Location = new Point(305, 161);
+            tbInput.Location = new Point(136, 160);
             tbInput.Name = "tbInput";
             tbInput.Size = new Size(100, 23);
             tbInput.TabIndex = 2;
@@ -166,19 +170,19 @@
             // 
             пускToolStripMenuItem.Name = "пускToolStripMenuItem";
             пускToolStripMenuItem.ShortcutKeys = Keys.F9;
-            пускToolStripMenuItem.Size = new Size(180, 22);
+            пускToolStripMenuItem.Size = new Size(175, 22);
             пускToolStripMenuItem.Text = "Пуск";
             пускToolStripMenuItem.Click += bStart_Click;
             // 
             // toolStripSeparator4
             // 
             toolStripSeparator4.Name = "toolStripSeparator4";
-            toolStripSeparator4.Size = new Size(177, 6);
+            toolStripSeparator4.Size = new Size(172, 6);
             // 
             // праНакопичувачіToolStripMenuItem
             // 
             праНакопичувачіToolStripMenuItem.Name = "праНакопичувачіToolStripMenuItem";
-            праНакопичувачіToolStripMenuItem.Size = new Size(180, 22);
+            праНакопичувачіToolStripMenuItem.Size = new Size(175, 22);
             праНакопичувачіToolStripMenuItem.Text = "Про накопичувачі";
             // 
             // довідкаToolStripMenuItem
@@ -191,7 +195,7 @@
             // проПрограмуToolStripMenuItem
             // 
             проПрограмуToolStripMenuItem.Name = "проПрограмуToolStripMenuItem";
-            проПрограмуToolStripMenuItem.Size = new Size(180, 22);
+            проПрограмуToolStripMenuItem.Size = new Size(154, 22);
             проПрограмуToolStripMenuItem.Text = "Про програму";
             проПрограмуToolStripMenuItem.Click += проПрограмуToolStripMenuItem_Click;
             // 
@@ -206,11 +210,40 @@
             ofdOpen.FileName = "openFileDialog1";
             ofdOpen.Filter = "рабочие файлы|*.SoM|Все Файлы|*.*";
             // 
+            // dgwOpen
+            // 
+            dgwOpen.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgwOpen.Location = new Point(366, 53);
+            dgwOpen.Name = "dgwOpen";
+            dgwOpen.RowTemplate.Height = 25;
+            dgwOpen.Size = new Size(316, 150);
+            dgwOpen.TabIndex = 4;
+            // 
+            // bSearch
+            // 
+            bSearch.Location = new Point(555, 220);
+            bSearch.Name = "bSearch";
+            bSearch.Size = new Size(75, 23);
+            bSearch.TabIndex = 5;
+            bSearch.Text = "Пошук";
+            bSearch.UseVisualStyleBackColor = true;
+            bSearch.Click += bSearch_Click;
+            // 
+            // tbSearch
+            // 
+            tbSearch.Location = new Point(555, 249);
+            tbSearch.Name = "tbSearch";
+            tbSearch.Size = new Size(100, 23);
+            tbSearch.TabIndex = 6;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(tbSearch);
+            Controls.Add(bSearch);
+            Controls.Add(dgwOpen);
             Controls.Add(tbInput);
             Controls.Add(label1);
             Controls.Add(bStart);
@@ -223,6 +256,7 @@
             Load += Form1_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgwOpen).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -251,5 +285,8 @@
         private ToolStripMenuItem проПрограмуToolStripMenuItem;
         private SaveFileDialog sfdSave;
         private OpenFileDialog ofdOpen;
+        private DataGridView dgwOpen;
+        private Button bSearch;
+        private TextBox tbSearch;
     }
 }
