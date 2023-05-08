@@ -19,6 +19,64 @@ namespace Hepalova_IKM_620b_s_project
         // Методи
         private string SaveFileName;// ім’я файлу для запису
         private string OpenFileName;// ім’я файлу для читання
+        public void Generator() // метод формування ключового поля
+        {
+            try
+            {
+                if (!File.Exists(this.SaveFileName)) // існує файл?
+                {
+                    Key = 1;
+                    return;
+                }
+                Stream S; // створення потоку
+                S = File.Open(this.SaveFileName, FileMode.Open); // Відкриття файлу 
+                Buffer D;
+                object O; // буферна змінна для контролю формату
+                BinaryFormatter BF = new BinaryFormatter(); // створення елементу для форматування
+                while (S.Position < S.Length)
+                {
+                    O = BF.Deserialize(S);
+                    D = O as Buffer;
+                    if (D == null) break;
+                    Key = D.Key;
+                }
+                Key++;
+                S.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Помилка файлу"); // Виведення на екран повідомлення "Помилка файлу"
+            }
+        }
+        public void ReadFromFile(System.Windows.Forms.DataGridView DG) // зчитування з файлу
+        {
+            try
+            {
+                if (!File.Exists(this.OpenFileName))
+                {
+                    MessageBox.Show("Файлу немає"); // Виведення на екран повідомлення "файлу немає"
+                    return;
+                }
+                Stream S; // створення потоку
+                S = File.Open(this.OpenFileName, FileMode.Open); // зчитування даних зфайлу
+                Buffer D;
+                object O; // буферна змінна для контролю формату
+                BinaryFormatter BF = new BinaryFormatter(); // створення об'єкту для форматування
+
+                while (S.Position < S.Length)
+                {
+                    O = BF.Deserialize(S); // десеріалізація
+                    D = O as Buffer;
+                    if (D == null) break;
+                    // Виведення даних на екран
+                }
+                S.Close(); // закриття
+            }
+            catch
+            {
+                MessageBox.Show("Помилка файлу"); // Виведення на екран повідомлення "Помилка файлу"
+            }
+        } // ReadFromFile закінчився
         public void SaveToFile() // Запис даних до файлу
         {
             if (!this.Modify)
@@ -34,6 +92,7 @@ namespace Hepalova_IKM_620b_s_project
                 D.Data = this.Data;
                 D.Result = Convert.ToString(this.Result);
                 D.Key = Key;
+                Key++;
                 BinaryFormatter BF = new BinaryFormatter(); // створення об'єкта для форматування
                 BF.Serialize(S, D);
                 S.Flush(); // очищення буфера потоку
@@ -42,7 +101,6 @@ namespace Hepalova_IKM_620b_s_project
             }
             catch
             {
-
                 MessageBox.Show("Помилка роботи з файлом"); // Виведення на екран повідомлення "Помилка роботи з файлом"
             }
         }
@@ -82,6 +140,17 @@ namespace Hepalova_IKM_620b_s_project
                 this.Result = Convert.ToString(false);
             }
             this.Modify = true; // Дозвіл запису
+        }
+        public bool SaveFileNameExists()
+        {
+            if (this.SaveFileName == null)
+                return false;
+            else return true;
+        }
+        public void NewRec() // новий запис
+        {
+            this.Data = ""; // "" - ознака порожнього рядка
+            this.Result = null; // для string- null
         }
     }
 }

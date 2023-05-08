@@ -107,51 +107,51 @@
             // 
             новийToolStripMenuItem.Name = "новийToolStripMenuItem";
             новийToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.N;
-            новийToolStripMenuItem.Size = new Size(180, 22);
+            новийToolStripMenuItem.Size = new Size(165, 22);
             новийToolStripMenuItem.Text = "Новий";
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(177, 6);
+            toolStripSeparator1.Size = new Size(162, 6);
             // 
             // відкритиToolStripMenuItem
             // 
             відкритиToolStripMenuItem.Name = "відкритиToolStripMenuItem";
             відкритиToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.O;
-            відкритиToolStripMenuItem.Size = new Size(180, 22);
+            відкритиToolStripMenuItem.Size = new Size(165, 22);
             відкритиToolStripMenuItem.Text = "Відкрити";
             відкритиToolStripMenuItem.Click += відкритиToolStripMenuItem_Click;
             // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(177, 6);
+            toolStripSeparator2.Size = new Size(162, 6);
             // 
             // зберегтиToolStripMenuItem
             // 
             зберегтиToolStripMenuItem.Name = "зберегтиToolStripMenuItem";
             зберегтиToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.S;
-            зберегтиToolStripMenuItem.Size = new Size(180, 22);
+            зберегтиToolStripMenuItem.Size = new Size(165, 22);
             зберегтиToolStripMenuItem.Text = "Зберегти";
             // 
             // зберегтиЯкToolStripMenuItem
             // 
             зберегтиЯкToolStripMenuItem.Name = "зберегтиЯкToolStripMenuItem";
-            зберегтиЯкToolStripMenuItem.Size = new Size(180, 22);
+            зберегтиЯкToolStripMenuItem.Size = new Size(165, 22);
             зберегтиЯкToolStripMenuItem.Text = "Зберегти як";
             зберегтиЯкToolStripMenuItem.Click += зберегтиЯкToolStripMenuItem_Click;
             // 
             // toolStripSeparator3
             // 
             toolStripSeparator3.Name = "toolStripSeparator3";
-            toolStripSeparator3.Size = new Size(177, 6);
+            toolStripSeparator3.Size = new Size(162, 6);
             // 
             // вихідToolStripMenuItem
             // 
             вихідToolStripMenuItem.Name = "вихідToolStripMenuItem";
             вихідToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Q;
-            вихідToolStripMenuItem.Size = new Size(180, 22);
+            вихідToolStripMenuItem.Size = new Size(165, 22);
             вихідToolStripMenuItem.Text = "Вихід";
             вихідToolStripMenuItem.Click += вихідToolStripMenuItem_Click;
             // 
@@ -166,20 +166,20 @@
             // 
             пускToolStripMenuItem.Name = "пускToolStripMenuItem";
             пускToolStripMenuItem.ShortcutKeys = Keys.F9;
-            пускToolStripMenuItem.Size = new Size(174, 22);
+            пускToolStripMenuItem.Size = new Size(180, 22);
             пускToolStripMenuItem.Text = "Пуск";
             пускToolStripMenuItem.Click += bStart_Click;
             // 
             // toolStripSeparator4
             // 
             toolStripSeparator4.Name = "toolStripSeparator4";
-            toolStripSeparator4.Size = new Size(171, 6);
+            toolStripSeparator4.Size = new Size(177, 6);
             // 
             // праНакопичувачіToolStripMenuItem
             // 
             праНакопичувачіToolStripMenuItem.Name = "праНакопичувачіToolStripMenuItem";
-            праНакопичувачіToolStripMenuItem.Size = new Size(174, 22);
-            праНакопичувачіToolStripMenuItem.Text = "Пра накопичувачі";
+            праНакопичувачіToolStripMenuItem.Size = new Size(180, 22);
+            праНакопичувачіToolStripMenuItem.Text = "Про накопичувачі";
             // 
             // довідкаToolStripMenuItem
             // 
@@ -191,13 +191,20 @@
             // проПрограмуToolStripMenuItem
             // 
             проПрограмуToolStripMenuItem.Name = "проПрограмуToolStripMenuItem";
-            проПрограмуToolStripMenuItem.Size = new Size(154, 22);
+            проПрограмуToolStripMenuItem.Size = new Size(180, 22);
             проПрограмуToolStripMenuItem.Text = "Про програму";
             проПрограмуToolStripMenuItem.Click += проПрограмуToolStripMenuItem_Click;
             // 
+            // sfdSave
+            // 
+            sfdSave.DefaultExt = "SoM";
+            sfdSave.Filter = "рабочие файлы|*.SoM|Все Файлы|*.*";
+            // 
             // ofdOpen
             // 
+            ofdOpen.DefaultExt = "SoM";
             ofdOpen.FileName = "openFileDialog1";
+            ofdOpen.Filter = "рабочие файлы|*.SoM|Все Файлы|*.*";
             // 
             // Form1
             // 
@@ -211,6 +218,7 @@
             MainMenuStrip = menuStrip1;
             Name = "Form1";
             Text = "Form1";
+            FormClosing += Form1_FormClosing;
             FormClosed += Form1_FormClosed;
             Load += Form1_Load;
             menuStrip1.ResumeLayout(false);
