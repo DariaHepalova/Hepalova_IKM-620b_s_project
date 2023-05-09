@@ -57,13 +57,32 @@
             toolTip1 = new ToolTip(components);
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
-            tabPage2 = new TabPage();
             statusStrip1 = new StatusStrip();
+            tabPage2 = new TabPage();
+            tabPage3 = new TabPage();
+            splitContainer1 = new SplitContainer();
+            LabelStack = new Label();
+            StackText = new Label();
+            Stacktb = new TextBox();
+            Peek = new Button();
+            Pop = new Button();
+            Push = new Button();
+            LabelQueue = new Label();
+            QueueText = new Label();
+            Queuetb = new TextBox();
+            Peek_q = new Button();
+            Dequeue = new Button();
+            Enqueue = new Button();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgwOpen).BeginInit();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
+            tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
+            splitContainer1.Panel1.SuspendLayout();
+            splitContainer1.Panel2.SuspendLayout();
+            splitContainer1.SuspendLayout();
             SuspendLayout();
             // 
             // bStart
@@ -249,6 +268,7 @@
             // 
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
+            tabControl1.Controls.Add(tabPage3);
             tabControl1.Location = new Point(0, 27);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -269,6 +289,14 @@
             tabPage1.Text = "Введення даних";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // statusStrip1
+            // 
+            statusStrip1.Location = new Point(3, 368);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(786, 22);
+            statusStrip1.TabIndex = 3;
+            statusStrip1.Text = "statusStrip1";
+            // 
             // tabPage2
             // 
             tabPage2.Controls.Add(dgwOpen);
@@ -282,13 +310,155 @@
             tabPage2.Text = "Робота з файлами";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // statusStrip1
+            // tabPage3
             // 
-            statusStrip1.Location = new Point(3, 368);
-            statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(786, 22);
-            statusStrip1.TabIndex = 3;
-            statusStrip1.Text = "statusStrip1";
+            tabPage3.Controls.Add(splitContainer1);
+            tabPage3.Location = new Point(4, 24);
+            tabPage3.Name = "tabPage3";
+            tabPage3.Size = new Size(792, 393);
+            tabPage3.TabIndex = 2;
+            tabPage3.Text = "Стек/Черга";
+            tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer1
+            // 
+            splitContainer1.Dock = DockStyle.Fill;
+            splitContainer1.IsSplitterFixed = true;
+            splitContainer1.Location = new Point(0, 0);
+            splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            splitContainer1.Panel1.BackColor = Color.Gray;
+            splitContainer1.Panel1.Controls.Add(LabelStack);
+            splitContainer1.Panel1.Controls.Add(StackText);
+            splitContainer1.Panel1.Controls.Add(Stacktb);
+            splitContainer1.Panel1.Controls.Add(Peek);
+            splitContainer1.Panel1.Controls.Add(Pop);
+            splitContainer1.Panel1.Controls.Add(Push);
+            // 
+            // splitContainer1.Panel2
+            // 
+            splitContainer1.Panel2.BackColor = Color.Silver;
+            splitContainer1.Panel2.Controls.Add(LabelQueue);
+            splitContainer1.Panel2.Controls.Add(QueueText);
+            splitContainer1.Panel2.Controls.Add(Queuetb);
+            splitContainer1.Panel2.Controls.Add(Peek_q);
+            splitContainer1.Panel2.Controls.Add(Dequeue);
+            splitContainer1.Panel2.Controls.Add(Enqueue);
+            splitContainer1.Size = new Size(792, 393);
+            splitContainer1.SplitterDistance = 388;
+            splitContainer1.TabIndex = 0;
+            // 
+            // LabelStack
+            // 
+            LabelStack.AutoSize = true;
+            LabelStack.Location = new Point(175, 264);
+            LabelStack.Name = "LabelStack";
+            LabelStack.Size = new Size(63, 15);
+            LabelStack.TabIndex = 5;
+            LabelStack.Text = "LabelStack";
+            // 
+            // StackText
+            // 
+            StackText.AutoSize = true;
+            StackText.Location = new Point(180, 52);
+            StackText.Name = "StackText";
+            StackText.Size = new Size(32, 15);
+            StackText.TabIndex = 4;
+            StackText.Text = "Стек";
+            // 
+            // Stacktb
+            // 
+            Stacktb.Location = new Point(150, 117);
+            Stacktb.Name = "Stacktb";
+            Stacktb.Size = new Size(100, 23);
+            Stacktb.TabIndex = 3;
+            // 
+            // Peek
+            // 
+            Peek.Location = new Point(268, 181);
+            Peek.Name = "Peek";
+            Peek.Size = new Size(75, 23);
+            Peek.TabIndex = 2;
+            Peek.Text = "Peek";
+            Peek.UseVisualStyleBackColor = true;
+            Peek.Click += Peek_Click;
+            // 
+            // Pop
+            // 
+            Pop.Location = new Point(163, 181);
+            Pop.Name = "Pop";
+            Pop.Size = new Size(75, 23);
+            Pop.TabIndex = 1;
+            Pop.Text = "Pop";
+            Pop.UseVisualStyleBackColor = true;
+            Pop.Click += Pop_Click;
+            // 
+            // Push
+            // 
+            Push.Location = new Point(58, 181);
+            Push.Name = "Push";
+            Push.Size = new Size(75, 23);
+            Push.TabIndex = 0;
+            Push.Text = "Push";
+            Push.UseVisualStyleBackColor = true;
+            Push.Click += Push_Click;
+            // 
+            // LabelQueue
+            // 
+            LabelQueue.AutoSize = true;
+            LabelQueue.Location = new Point(183, 264);
+            LabelQueue.Name = "LabelQueue";
+            LabelQueue.Size = new Size(70, 15);
+            LabelQueue.TabIndex = 5;
+            LabelQueue.Text = "LabelQueue";
+            // 
+            // QueueText
+            // 
+            QueueText.AutoSize = true;
+            QueueText.Location = new Point(183, 52);
+            QueueText.Name = "QueueText";
+            QueueText.Size = new Size(39, 15);
+            QueueText.TabIndex = 4;
+            QueueText.Text = "Черга";
+            // 
+            // Queuetb
+            // 
+            Queuetb.Location = new Point(153, 117);
+            Queuetb.Name = "Queuetb";
+            Queuetb.Size = new Size(100, 23);
+            Queuetb.TabIndex = 3;
+            // 
+            // Peek_q
+            // 
+            Peek_q.Location = new Point(293, 180);
+            Peek_q.Name = "Peek_q";
+            Peek_q.Size = new Size(75, 23);
+            Peek_q.TabIndex = 2;
+            Peek_q.Text = "Peek_q";
+            Peek_q.UseVisualStyleBackColor = true;
+            Peek_q.Click += Peek_q_Click;
+            // 
+            // Dequeue
+            // 
+            Dequeue.Location = new Point(168, 181);
+            Dequeue.Name = "Dequeue";
+            Dequeue.Size = new Size(75, 23);
+            Dequeue.TabIndex = 1;
+            Dequeue.Text = "Dequeue";
+            Dequeue.UseVisualStyleBackColor = true;
+            Dequeue.Click += Dequeue_Click;
+            // 
+            // Enqueue
+            // 
+            Enqueue.Location = new Point(32, 182);
+            Enqueue.Name = "Enqueue";
+            Enqueue.Size = new Size(75, 22);
+            Enqueue.TabIndex = 0;
+            Enqueue.Text = "Enqueue";
+            Enqueue.UseVisualStyleBackColor = true;
+            Enqueue.Click += Enqueue_Click;
             // 
             // Form1
             // 
@@ -311,6 +481,13 @@
             tabPage1.PerformLayout();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
+            tabPage3.ResumeLayout(false);
+            splitContainer1.Panel1.ResumeLayout(false);
+            splitContainer1.Panel1.PerformLayout();
+            splitContainer1.Panel2.ResumeLayout(false);
+            splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
+            splitContainer1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -347,5 +524,19 @@
         private TabPage tabPage1;
         private TabPage tabPage2;
         private StatusStrip statusStrip1;
+        private TabPage tabPage3;
+        private SplitContainer splitContainer1;
+        private Label LabelStack;
+        private Label StackText;
+        private TextBox Stacktb;
+        private Button Peek;
+        private Button Pop;
+        private Button Push;
+        private Label LabelQueue;
+        private Label QueueText;
+        private TextBox Queuetb;
+        private Button Peek_q;
+        private Button Dequeue;
+        private Button Enqueue;
     }
 }
