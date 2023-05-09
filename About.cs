@@ -26,5 +26,15 @@ namespace Hepalova_IKM_620b_s_project
         {
             Close();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            if (progressBar1.Value < 100)
+            {
+                progressBar1.Value += 1;
+            }
+            timer1.Start();
+        }
     }
 }

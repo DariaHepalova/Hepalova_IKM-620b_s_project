@@ -32,12 +32,14 @@
             label1 = new Label();
             button1 = new Button();
             tAbout = new System.Windows.Forms.Timer(components);
+            progressBar1 = new ProgressBar();
+            timer1 = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(309, 88);
+            label1.Location = new Point(110, 51);
             label1.Name = "label1";
             label1.Size = new Size(180, 60);
             label1.TabIndex = 0;
@@ -45,7 +47,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(350, 188);
+            button1.Location = new Point(110, 140);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 1;
@@ -58,11 +60,24 @@
             tAbout.Interval = 10000;
             tAbout.Tick += tAbout_Tick;
             // 
+            // progressBar1
+            // 
+            progressBar1.Location = new Point(110, 202);
+            progressBar1.Name = "progressBar1";
+            progressBar1.Size = new Size(100, 23);
+            progressBar1.TabIndex = 2;
+            // 
+            // timer1
+            // 
+            timer1.Enabled = true;
+            timer1.Tick += timer1_Tick;
+            // 
             // About
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(374, 283);
+            Controls.Add(progressBar1);
             Controls.Add(button1);
             Controls.Add(label1);
             Name = "About";
@@ -76,5 +91,7 @@
         private Label label1;
         private Button button1;
         public System.Windows.Forms.Timer tAbout;
+        public ProgressBar progressBar1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
