@@ -336,5 +336,6 @@ namespace Hepalova_IKM_620b_s_project
                 richTextBox1.Text = File.ReadAllText(o.FileName, Encoding.Default);
             }
         }
+    
     }
 }
